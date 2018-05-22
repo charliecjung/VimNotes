@@ -1,0 +1,263 @@
+\documentclass[12pt, letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{enumitem}
+\usepackage{dirtytalk}
+%Preamble:
+\title {\textbf{Vim} Notes}
+\author{Charlie Jung}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\newpage
+\underline{Vim:} 
+\\
+
+
+\begin{flushleft}
+
+
+
+\textbf{h} = \leftarrow 
+\par
+
+\textbf{k} = \uparrow 
+\par
+
+\textbf{l} = \rightarrow 
+\par
+
+\textbf{j} = \downarrow 
+\par
+
+\textbf{x} = delete letter \\
+\par 
+\textbf{i} = insert ch. at cursor  \\
+\par
+\textbf{A} = append text \\
+\par
+\textbf{:wq} = quit and \textit{save} a file \\
+\par
+\textbf{:q!} = quit without \underline{saving} \\
+\par
+\textbf{dw} = delete a word \\
+\par
+\textbf{d\$} = delete until the end of the line \\
+\par
+\textbf{d} = delete operator + <motion> 
+
+\begin{itemize}[leftmargin = 10ex]
+    \item \textbf{w} = until the start of the next word (\textit{Excluding} the first character) 
+    \item \textbf{e} = to the end of the current word (\textit{Including} the last word) \par
+    \item \textbf{\$} = to the end of the line (\textit{Including} the last character)  \par 
+    \item \textbf{d} = delete the whole line \par 
+\end{itemize}
+
+
+\underline{Pressing just the motion keys will move to that position} \\
+
+A \textbf{number} before the action will repeat it that many times. \\
+
+For example, \\
+
+\textbf{0 (\#)} = moves to the start of the line \\
+\par
+
+\textbf{<d> <number> <motion>} \\
+\par
+
+\textbf{dd} = delete whole line \\
+\par
+
+\textbf{u} = undo last command \\
+\par
+
+\textbf{U} = fix whole line \\
+\par
+
+\textbf{p} = put deleted text \\
+\par
+
+\textbf{r<Letter>} = replace letter at cursor with \textbf{<Letter>} \\
+\par
+
+\textbf{ce} = change until the end of the \underline{word} \\
+\par
+
+\textbf{c <number> <motion> } \\
+\par
+
+\textbf{CTRL + G} = \say{Display File} and list line number etc... \\
+\par
+
+\textbf{G} = to move to a certain line \# in a file \\
+\par
+or \\
+\par
+\textbf{<\#>G} \\
+\par
+
+\textbf{gg} = Move to the \textbf{START OF THE FILE} \\
+\par
+
+\textbf{G} = Move to the \textbf{END OF THE FILE} \\
+\par
+
+\textbf{/<PHRASE>} = To search for the \underline{\underline{specified phrase}}. 
+\par
+To search for the same phrase again: \textbf{n} 
+\par
+Opposite direction: \textbf{N} \\
+\par
+
+To search in the backward direction: \textbf{?} 
+\par
+To go back = \textbf{CTRL + O} \Leftarrow repeat \hspace{1ex} to \hspace{1ex} go \hspace{1ex} further 
+\par
+\textbf{CTRL + I} = goes forward \\
+\par
+
+\textbf{\%} = find matching ), ], \} \par
+Press \% to switch to the staring/ending symbol \\
+\par
+
+\textbf{:s/old/new/g} = substitute "old" with "new". \par
+(changes "old" \rightarrow "new" for \underline{current line}) \par
+/g = current line \\
+\par
+
+\textbf{:#, #s/old/new/g} = #, # are line numbers \\
+\par
+
+\textbf{:\%s/old/new/g} = change every occurrence of "old" to "new" in the \textit{whole file} \\
+\par
+
+\textbf{:\%s/old/new/gc} = change every occurrence in the whole file \underline(with a prompt) \\
+\par
+
+\textbf{:!, :!ls, :!dir} = followed by \underline{ANY} external command \\
+\par
+\textbf{:!ls, ~dir} = list current directory \\
+\par
+
+\textbf{:w <FILENAME?} = save a new file with the name as <FILENAME> \\
+\par
+
+\underline{MS-DOS} = \textbf{!del TEST} \par
+\underline{UNIX} = \textbf{!rm TEST} \\
+\par
+
+\textbf{v} = highlight text and enter Visual Mode \\
+\par
+E.g. Man! \frame{Oh man!} \\
+\par
+\textbf{d} = delete \\
+\par
+\textbf{:w Bam} = saves highlighted text into a new file: Bam \\
+\par
+
+\textbf{:r <FILENAME>} = insert contents of a file. (Can also pipe out \underline{file output}) \\
+\par
+
+\textbf{:r !ls} = prints out the current file directory \\
+\par
+
+\textbf{o} = open a line \textit{under} the cursor and places you in INSERT mode \\
+\par
+
+\textbf{O} = open a line \textit{above} the cursor and places you in INSERT mode \\
+\par
+
+\textbf{a} = append text after the cursor \\
+\par
+
+\textbf{R} = replace more than one \underline{character} \\
+\par
+
+R 123 \rightarrow 479
+
+\textbf{y} = copy \\
+\par
+
+\textbf{p} = paste \\
+\par
+
+\section{Miscellaneous Tips}
+
+You can \underline{\underline{ignore case}}: \\
+\par
+
+:set ic \\
+\par
+
+highlight \\
+\par
+
+:set hls \\
+\par
+
+:set incsearch \\
+\par
+
+nohls = to disable highlight \\
+\par
+
+ignore case for one search command: \par
+\c or /ignore\c \\
+\par
+
+\frame{fn + F1 or :help} \\
+\par
+
+\underline{Vim StartUp Scripts with .vimrc} \\
+\par
+
+\underline{MS-WINDOWS}: e \$VIM/_vimrc \\
+\par
+
+\underline{UNIX}: e ~/.vimrc \\
+\par
+Read examples:
+
+\textbf{:r \$VIMRUNTIME/vimrc_example.vim} \\
+\par
+
+\underline{Command-Line Completion}: \\
+\par
+
+\begin{enumerate}
+    \item First, make sure that vim is not in compatible mode \par \textbf{:set nocp} \\ \par
+    \item See what files exist in the \underline{current directory}: \par \textbf{!ls or :!dir} \\ \par
+    \item Type the start of the command: \textbf{:e} \\ \par \textbf{CTRL + D} \rightarrow to \hspace{1ex} show \hspace{1ex}  available \hspace{1ex}  commands \\ \par \textbf{<TAB>} \rightarrow to \hspace{1ex}  autocomplete \hspace{1ex}  a \hspace{1ex}  command \\ \par
+\end{enumerate}
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{flushleft}
+\end{document}
