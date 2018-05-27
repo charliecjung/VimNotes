@@ -1,34 +1,39 @@
 \documentclass[12pt, letterpaper]{article}
 \usepackage[utf8]{inputenc}
 \usepackage{enumitem}
-\usepackage{dirtytalk}
+\usepackage{fontspec}
+
+\usepackage{bm}
 %Preamble:
 \title {\textbf{Vim} Notes}
 \author{Charlie Jung}
 \date{\today}
-
+\setmainfont{Lato-Regular.ttf} 
 \begin{document}
 \maketitle
 
 \newpage
 \underline{Vim:} 
-\\
+
 
 
 \begin{flushleft}
 
 
 
-\textbf{h} = \leftarrow 
+$\textbf{h} =  \leftarrow $
+
+
+
+
+
+$\textbf{k} = \uparrow  $
 \par
 
-\textbf{k} = \uparrow 
+$\textbf{l}  = \rightarrow $
 \par
 
-\textbf{l} = \rightarrow 
-\par
-
-\textbf{j} = \downarrow 
+$\textbf{j} = \downarrow $
 \par
 
 \textbf{x} = delete letter \\
@@ -47,10 +52,10 @@
 \par
 \textbf{d} = delete operator + <motion> 
 
-\begin{itemize}[leftmargin = 10ex]
-    \item \textbf{w} = until the start of the next word (\textit{Excluding} the first character) 
-    \item \textbf{e} = to the end of the current word (\textit{Including} the last word) \par
-    \item \textbf{\$} = to the end of the line (\textit{Including} the last character)  \par 
+\begin{itemize}
+    \item \textbf{w} = until the start of the next word (Excluding the first character) 
+    \item \textbf{e} = to the end of the current word (Including the last word) \par
+    \item \textbf{\$} = to the end of the line (Including the last character)  \par 
     \item \textbf{d} = delete the whole line \par 
 \end{itemize}
 
@@ -88,7 +93,7 @@ For example, \\
 \textbf{c <number> <motion> } \\
 \par
 
-\textbf{CTRL + G} = \say{Display File} and list line number etc... \\
+\textbf{CTRL + G} = "Display File" and list line number etc... \\
 \par
 
 \textbf{G} = to move to a certain line \# in a file \\
@@ -113,9 +118,14 @@ Opposite direction: \textbf{N} \\
 
 To search in the backward direction: \textbf{?} 
 \par
-To go back = \textbf{CTRL + O} \Leftarrow repeat \hspace{1ex} to \hspace{1ex} go \hspace{1ex} further 
+
+To go back = $\textbf{Control + O}  \Leftarrow repeat \hspace{1ex} to \hspace{1ex} go \hspace{1ex} further $
+
 \par
-\textbf{CTRL + I} = goes forward \\
+
+\textbf{Control + I} = goes forward \\
+\par
+
 \par
 
 \textbf{\%} = find matching ), ], \} \par
@@ -123,11 +133,11 @@ Press \% to switch to the staring/ending symbol \\
 \par
 
 \textbf{:s/old/new/g} = substitute "old" with "new". \par
-(changes "old" \rightarrow "new" for \underline{current line}) \par
+$(changes "old" \rightarrow "new" for \underline{current line})$ \par
 /g = current line \\
 \par
 
-\textbf{:#, #s/old/new/g} = #, # are line numbers \\
+\textbf{:\#, \#s/old/new/g} = \#,\# are line numbers \\
 \par
 
 \textbf{:\%s/old/new/g} = change every occurrence of "old" to "new" in the \textit{whole file} \\
@@ -175,7 +185,7 @@ E.g. Man! \frame{Oh man!} \\
 \textbf{R} = replace more than one \underline{character} \\
 \par
 
-R 123 \rightarrow 479
+$R 123 \rightarrow 479 $
 
 \textbf{y} = copy \\
 \par
@@ -213,51 +223,29 @@ ignore case for one search command: \par
 \underline{Vim StartUp Scripts with .vimrc} \\
 \par
 
-\underline{MS-WINDOWS}: e \$VIM/_vimrc \\
+\underline{MS-WINDOWS}: e \$VIM/\_vimrc \\
 \par
 
 \underline{UNIX}: e ~/.vimrc \\
 \par
 Read examples:
 
-\textbf{:r \$VIMRUNTIME/vimrc_example.vim} \\
+\textbf{:r \$VIMRUNTIME/vimrc/\_example.vim} \\
 \par
 
 \underline{Command-Line Completion}: \\
 \par
 
 \begin{enumerate}
+
     \item First, make sure that vim is not in compatible mode \par \textbf{:set nocp} \\ \par
     \item See what files exist in the \underline{current directory}: \par \textbf{!ls or :!dir} \\ \par
-    \item Type the start of the command: \textbf{:e} \\ \par \textbf{CTRL + D} \rightarrow to \hspace{1ex} show \hspace{1ex}  available \hspace{1ex}  commands \\ \par \textbf{<TAB>} \rightarrow to \hspace{1ex}  autocomplete \hspace{1ex}  a \hspace{1ex}  command \\ \par
+    \item Type the start of the command: \textbf{:e} 
+    \item $\textbf{CTRL + D} \rightarrow to \hspace{1ex} show \hspace{1ex}  available \hspace{1ex}  commands $
+    \item $\textbf{TAB} \rightarrow to \hspace{1ex}  autocomplete \hspace{1ex}  a \hspace{1ex}  command $ \\ \par
+  
+    
 \end{enumerate}
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 \end{flushleft}
 \end{document}
